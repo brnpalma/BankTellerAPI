@@ -1,11 +1,9 @@
 # 💰 BankTellerAPI
 
-Aplicação desenvolvida para fins de experimentação, com o propósito de implementar uma API voltada ao gerenciamento de contas bancárias e à realização de transferências entre clientes de forma simples e funcional.
+Aplicação API experimental voltada ao gerenciamento de contas bancárias e à realização de transferências entre contas de forma simples e funcional.
 
-
-## Acesse o endpoint local em:
+##📎 A documentação da API pode ser acessada localmente em:
 https://localhost:7040/docs
-
 
 ## 🧩 Funcionalidades
 
