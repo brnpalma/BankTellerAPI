@@ -2,7 +2,7 @@
 
 # 💰 Sistema Caixa de Banco
 
-Aplicação desenvolvida para testes pessoais, com o objetivo de criar uma API para gerenciamento de contas bancárias e realização de transferências entre clientes.
+Aplicação desenvolvida para fins de experimentação, com o propósito de implementar uma API voltada ao gerenciamento de contas bancárias e à realização de transferências entre clientes de forma simples e funcional.
 
 
 ## Acesse o endpoint local (exemplo)
