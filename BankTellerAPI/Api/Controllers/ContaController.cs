@@ -1,19 +1,20 @@
+using BankTellerAPI.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BankTellerAPI.Controllers
+namespace BankTellerAPI.Api.Controllers
 {
     [ApiController]
     [Route("[controller]")]
-    public class WeatherForecastController : ControllerBase
+    public class ContaController : ControllerBase
     {
         private static readonly string[] Summaries = new[]
         {
             "Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
         };
 
-        private readonly ILogger<WeatherForecastController> _logger;
+        private readonly ILogger<ContaController> _logger;
 
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        public ContaController(ILogger<ContaController> logger)
         {
             _logger = logger;
         }

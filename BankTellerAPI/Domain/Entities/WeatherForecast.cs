@@ -1,4 +1,4 @@
-namespace BankTellerAPI
+namespace BankTellerAPI.Domain.Entities
 {
     public class WeatherForecast
     {

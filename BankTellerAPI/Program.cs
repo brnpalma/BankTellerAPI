@@ -1,15 +1,27 @@
+using BankTellerAPI.Api;
+using Scalar.AspNetCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddOpenApi(options =>
+{
+    options.AddDocumentTransformer((document, context, cancellationToken) =>
+    {
+        document.Info = new()
+        {
+            Title = Constants.ApiTitle,
+            Version = Constants.ApiVersion,
+            Description = Constants.ApiDescription
+        };
+        return Task.CompletedTask;
+    });
+});
 
 var app = builder.Build();
 
-// Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
@@ -21,5 +33,11 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+app.MapOpenApi();
+app.MapScalarApiReference("/docs", options =>
+{
+    options.Title = Constants.ApiTitle;
+    options.Theme = ScalarTheme.Kepler;
+});
 
-app.Run();
+await app.RunAsync();
