@@ -3,7 +3,7 @@
 Aplicação desenvolvida para fins de experimentação, com o propósito de implementar uma API voltada ao gerenciamento de contas bancárias e à realização de transferências entre clientes de forma simples e funcional.
 
 
-## Acesse o endpoint local (exemplo)
+## Acesse o endpoint local em:
 https://localhost:7040/docs
 
 
