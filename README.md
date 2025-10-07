@@ -6,7 +6,7 @@ Aplicação desenvolvida para fins de experimentação, com o propósito de impl
 
 
 ## Acesse o endpoint local (exemplo)
-https://localhost:5001/swagger
+https://localhost:7040/docs
 
 
 ## 🧩 Funcionalidades
