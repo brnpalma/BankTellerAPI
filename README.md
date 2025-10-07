@@ -4,8 +4,10 @@
 
 Aplicação desenvolvida para testes pessoais, com o objetivo de criar uma API para gerenciamento de contas bancárias e realização de transferências entre clientes.
 
+
 ## Acesse o endpoint local (exemplo)
 https://localhost:5001/swagger
+
 
 ## 🧩 Funcionalidades
 
@@ -36,6 +38,7 @@ Permite transferir valores entre contas ativas.
 **Regras:**
 - Ambas as contas devem estar **ativas**;  
 - A conta de origem deve ter **saldo suficiente**;  
+
 
 ## 👨‍💻 Autor
 Desenvolvido para fins de viabilidade técnica.  
