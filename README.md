@@ -6,7 +6,7 @@ Aplicação desenvolvida para testes pessoais, com o objetivo de criar uma API p
 
 ---
 
-## 🧩 Acesse o endpoint local (exemplo)
+## Acesse o endpoint local (exemplo)
 https://localhost:5001/swagger
 
 ---
