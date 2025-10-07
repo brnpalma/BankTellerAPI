@@ -1,6 +1,4 @@
-# BankTellerAPI
-
-# 💰 Sistema Caixa de Banco
+# 💰 BankTellerAPI
 
 Aplicação desenvolvida para fins de experimentação, com o propósito de implementar uma API voltada ao gerenciamento de contas bancárias e à realização de transferências entre clientes de forma simples e funcional.
 
