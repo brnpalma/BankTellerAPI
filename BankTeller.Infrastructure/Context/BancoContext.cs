@@ -1,7 +1,7 @@
 ﻿using BankTellerAPI.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
-namespace BankTellerAPI.Infrastructure.Context
+namespace BankTeller.Infrastructure.Context
 {
     public class BancoContext(DbContextOptions<BancoContext> options) : DbContext(options)
     {

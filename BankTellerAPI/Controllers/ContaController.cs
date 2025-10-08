@@ -1,7 +1,7 @@
-using BankTellerAPI.Domain.Entities;
+﻿using BankTellerAPI.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BankTellerAPI.Api.Controllers
+namespace BankTeller.API.Controllers
 {
     [ApiController]
     [Route("[controller]")]

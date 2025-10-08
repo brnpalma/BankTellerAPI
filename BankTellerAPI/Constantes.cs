@@ -1,6 +1,6 @@
-﻿namespace BankTellerAPI.Api
+﻿namespace BankTeller.API
 {
-    public static class Constants
+    public static class Constantes
     {
         public const string ApiTitle = "BankTeller API";
         public const string ApiVersion = "v1";

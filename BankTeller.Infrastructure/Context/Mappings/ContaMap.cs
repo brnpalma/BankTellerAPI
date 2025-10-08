@@ -2,7 +2,7 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
-namespace BankTellerAPI.Infrastructure.Context.Mappings
+namespace BankTeller.Infrastructure.Context.Mappings
 {
     public class ContaMap : IEntityTypeConfiguration<Conta>
     {

@@ -1,6 +1,6 @@
-using BankTellerAPI.Api;
-using BankTellerAPI.Infrastructure.Context;
-using BankTellerAPI.Infrastructure.DependencyInjection;
+﻿using BankTeller.API;
+using BankTeller.Infrastructure.DependencyInjection;
+using BankTeller.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
 
@@ -14,9 +14,9 @@ builder.Services.AddOpenApi(options =>
     {
         document.Info = new()
         {
-            Title = Constants.ApiTitle,
-            Version = Constants.ApiVersion,
-            Description = Constants.ApiDescription
+            Title = Constantes.ApiTitle,
+            Version = Constantes.ApiVersion,
+            Description = Constantes.ApiDescription
         };
         return Task.CompletedTask;
     });
@@ -41,7 +41,7 @@ app.MapControllers();
 app.MapOpenApi();
 app.MapScalarApiReference("/docs", options =>
 {
-    options.Title = Constants.ApiTitle;
+    options.Title = Constantes.ApiTitle;
     options.Theme = ScalarTheme.Kepler;
 });
 

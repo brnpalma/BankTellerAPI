@@ -1,9 +1,9 @@
-﻿using BankTellerAPI.Application.Interfaces;
+﻿using BankTeller.Infrastructure.Context;
+using BankTellerAPI.Application.Interfaces;
 using BankTellerAPI.Domain.Entities;
-using BankTellerAPI.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 
-namespace BankTellerAPI.Infrastructure.Repositories
+namespace BankTeller.Infrastructure.Repositories
 {
     public class ContaRepository(BancoContext context) : IContaRepository
     {

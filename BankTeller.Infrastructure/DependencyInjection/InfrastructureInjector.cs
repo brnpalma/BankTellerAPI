@@ -1,8 +1,9 @@
-﻿using BankTellerAPI.Application.Interfaces;
-using BankTellerAPI.Infrastructure.Context;
-using BankTellerAPI.Infrastructure.Repositories;
+﻿using BankTeller.Infrastructure.Context;
+using BankTeller.Infrastructure.Repositories;
+using BankTellerAPI.Application.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 
-namespace BankTellerAPI.Infrastructure.DependencyInjection
+namespace BankTeller.Infrastructure.DependencyInjection
 {
     public static class InfrastructureInjector
     {
