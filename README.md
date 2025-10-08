@@ -35,7 +35,19 @@ Permite transferir valores entre contas ativas.
 - Ambas as contas devem estar **ativas**;  
 - A conta de origem deve ter **saldo suficiente**;  
 
+## 🔐 Segurança
+
+A segurança do sistema é garantida pela **restrição física de acesso à máquina** onde a aplicação será executada.  
+Não há necessidade de autenticação ou autorização adicionais, pois o ambiente é controlado fisicamente.  
+Por isso, **não implemente mecanismos de login, tokens ou controle de acesso** — o sistema é seguro por design local.
+
+## 🛠️ Setup automático
+
+Ao executar a aplicação (`dotnet run`), o banco de dados e suas tabelas são **criados automaticamente** via Entity Framework Core.  
+Não é necessário rodar comandos manuais como `dotnet ef database update` — as migrações são aplicadas na inicialização.  
+Facilitando o processo de clonar o projeto e rodar a API sem esforço adicional.
 
 ## 👨‍💻 Autor
+
 Desenvolvido para fins de viabilidade técnica.  
 Sinta-se à vontade para explorar, rodar e avaliar a arquitetura, organização e boas práticas aplicadas.
