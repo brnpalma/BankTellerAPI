@@ -1,4 +1,4 @@
-﻿using BankTellerAPI.Domain.Entities;
+﻿using BankTeller.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 

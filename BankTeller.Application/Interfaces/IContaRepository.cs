@@ -1,12 +1,13 @@
-﻿using BankTellerAPI.Domain.Entities;
+﻿using BankTeller.Domain.Entities;
 
-namespace BankTellerAPI.Application.Interfaces
+namespace BankTeller.Application.Interfaces
 {
     public interface IContaRepository
     {
         Task<Conta?> ObterPorDocumentoAsync(string documento);
-        Task<IEnumerable<Conta?>> ObterPorNomeAsync(string nomeCliente);
+        Task<IEnumerable<Conta?>> ObterPorNomeAsync(string nome);
         Task CriarAsync(Conta conta);
         Task AtualizarAsync(Conta conta);
+        Task RegistrarInativaLogsAsync(InativaLog log);
     }
 }

@@ -3,10 +3,14 @@ using BankTeller.Infrastructure.DependencyInjection;
 using BankTeller.Infrastructure.Context;
 using Microsoft.EntityFrameworkCore;
 using Scalar.AspNetCore;
+using BankTeller.Application.Interfaces;
+using BankTeller.Application.Services;
+using BankTeller.API.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
+builder.Services.AddScoped<IBankService, BankService>();
 
 builder.Services.AddOpenApi(options =>
 {
@@ -35,6 +39,7 @@ using (var scope = app.Services.CreateScope())
     context.Database.EnsureCreated();
 }
 
+app.UseMiddleware<ExceptionMiddleware>();
 app.UseHttpsRedirection();
 //app.UseAuthorization();
 app.MapControllers();

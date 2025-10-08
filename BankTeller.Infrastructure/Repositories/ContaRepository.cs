@@ -1,6 +1,6 @@
 ﻿using BankTeller.Infrastructure.Context;
-using BankTellerAPI.Application.Interfaces;
-using BankTellerAPI.Domain.Entities;
+using BankTeller.Application.Interfaces;
+using BankTeller.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankTeller.Infrastructure.Repositories
@@ -11,7 +11,7 @@ namespace BankTeller.Infrastructure.Repositories
 
         public async Task<Conta?> ObterPorDocumentoAsync(string documento)
         {
-            return await _context.Contas.FirstOrDefaultAsync(c => c.DocumentoCliente == documento);
+            return await _context.Contas.FirstOrDefaultAsync(c => c.Documento == documento);
         }
 
         public async Task CriarAsync(Conta conta)
@@ -26,11 +26,17 @@ namespace BankTeller.Infrastructure.Repositories
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Conta?>> ObterPorNomeAsync(string nomeCliente)
+        public async Task<IEnumerable<Conta?>> ObterPorNomeAsync(string nome)
         {
             return await _context.Contas
-                .Where(c => c.NomeCliente != null && c.NomeCliente.Contains(nomeCliente))
+                .Where(c => c.Nome != null && c.Nome.Contains(nome))
                 .ToListAsync();
+        }
+
+        public async Task RegistrarInativaLogsAsync(InativaLog log)
+        {
+            await _context.InativaLogs.AddAsync(log);
+            await _context.SaveChangesAsync();
         }
     }
 }
