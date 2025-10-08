@@ -3,7 +3,7 @@
 Aplicação API experimental voltada ao gerenciamento de contas bancárias e à realização de transferências entre contas de forma simples e funcional.
 
 ## 📎 A documentação da API pode ser acessada localmente em:
-https://localhost:7040/docs
+https://localhost:7090/docs
 
 ## 🧩 Funcionalidades
 
