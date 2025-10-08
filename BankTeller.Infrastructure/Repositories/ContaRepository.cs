@@ -25,5 +25,12 @@ namespace BankTeller.Infrastructure.Repositories
             _context.Contas.Update(conta);
             await _context.SaveChangesAsync();
         }
+
+        public async Task<IEnumerable<Conta?>> ObterPorNomeAsync(string nomeCliente)
+        {
+            return await _context.Contas
+                .Where(c => c.NomeCliente != null && c.NomeCliente.Contains(nomeCliente))
+                .ToListAsync();
+        }
     }
 }
