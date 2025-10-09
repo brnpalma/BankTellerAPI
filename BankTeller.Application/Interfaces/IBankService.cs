@@ -8,6 +8,6 @@ namespace BankTeller.Application.Interfaces
         Task<Resultado<Conta>> ConsultarContasPorDocumento(string documento);
         Task<Resultado<IEnumerable<Conta>>> ConsultarContasPorNome(string nome);
         Task<Resultado<string>> InativarConta(InativaDto model);
-        Task<Resultado<string>> Transferir(TransferenciaDto model);
+        Task<Resultado<string>> Transferir(TransacaoDto model);
     }
 }

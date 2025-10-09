@@ -15,6 +15,60 @@ namespace BankTeller.Tests.Infrastructure.Tests
             return new BancoContext(options);
         }
 
+        #region Cadastros
+
+        [Fact]
+        public async Task CriarAsync_AdicionaContaNoBanco()
+        {
+            var context = GetInMemoryContext();
+            var repo = new ContaRepository(context);
+            var conta = new Conta("Maria", "987654321");
+
+            await repo.CriarAsync(conta);
+
+            var dbConta = await context.Contas.FirstOrDefaultAsync(c => c.Documento == "987654321");
+            Assert.NotNull(dbConta);
+            Assert.Equal("Maria", dbConta?.Nome);
+        }
+
+        [Fact]
+        public async Task RegistrarLogsInativacaoAsync_AdicionaLogsNoBanco()
+        {
+            var context = GetInMemoryContext();
+            var repo = new ContaRepository(context);
+            var log = new LogInativacao("123456789", "admin") { Descricao = "Conta inativada" };
+
+            await repo.RegistrarLogsInativacaoAsync(log);
+
+            var dbLog = await context.LogsInativacao.FirstOrDefaultAsync(l => l.Documento == "123456789");
+            Assert.NotNull(dbLog);
+            Assert.Equal("admin", dbLog?.UsuarioDesativacao);
+            Assert.Equal("Conta inativada", dbLog?.Descricao);
+        }
+
+        [Fact]
+        public async Task RegistrarTransacoesAsync_AdicionaTransacaoNoBanco()
+        {
+            var context = GetInMemoryContext();
+            var repo = new ContaRepository(context);
+            var transacao = new Transacao()
+            {
+                IdContaOrigem = 1,
+                IdContaDestino = 2,
+                Valor = 100
+            };
+
+            await repo.RegistrarTransacoesAsync(transacao);
+
+            var dbTransacao = await context.Transacoes.FirstOrDefaultAsync(t => t.IdContaOrigem == 1 && t.IdContaDestino == 2);
+            Assert.NotNull(dbTransacao);
+            Assert.Equal(100, dbTransacao.Valor);
+        }
+
+        #endregion
+
+        #region Consultas
+
         [Fact]
         public async Task ObterPorDocumentoAsync_RetornaConta_QuandoDocumentoExiste()
         {
@@ -46,36 +100,6 @@ namespace BankTeller.Tests.Infrastructure.Tests
         }
 
         [Fact]
-        public async Task CriarAsync_AdicionaContaNoBanco()
-        {
-            var context = GetInMemoryContext();
-            var repo = new ContaRepository(context);
-            var conta = new Conta("Maria", "987654321");
-
-            await repo.CriarAsync(conta);
-
-            var dbConta = await context.Contas.FirstOrDefaultAsync(c => c.Documento == "987654321");
-            Assert.NotNull(dbConta);
-            Assert.Equal("Maria", dbConta?.Nome);
-        }
-
-        [Fact]
-        public async Task AtualizarAsync_AtualizaCotaNoBanco()
-        {
-            var context = GetInMemoryContext();
-            var conta = new Conta("Carlos", "111222333") { Id = 99 };
-            context.Contas.Add(conta);
-            await context.SaveChangesAsync();
-            var repo = new ContaRepository(context);
-
-            conta.Nome = "Carlos Silva";
-            await repo.AtualizarAsync(conta);
-
-            var dbConta = await context.Contas.FirstOrDefaultAsync(c => c.Id == 99);
-            Assert.Equal("Carlos Silva", dbConta?.Nome);
-        }
-
-        [Fact]
         public async Task ObterPorNomeAsync_RetornaContasQueNomeCorresponde()
         {
             var context = GetInMemoryContext();
@@ -93,19 +117,27 @@ namespace BankTeller.Tests.Infrastructure.Tests
             Assert.All(result, c => Assert.Contains("Ana", c?.Nome));
         }
 
+        #endregion
+
+        #region Alterações
+
         [Fact]
-        public async Task RegistrarLogsInativacaoAsync_AdicionaLogsNoBanco()
+        public async Task AtualizarAsync_AtualizaCotaNoBanco()
         {
             var context = GetInMemoryContext();
+            var conta = new Conta("Carlos", "111222333") { Id = 99 };
+            context.Contas.Add(conta);
+            await context.SaveChangesAsync();
             var repo = new ContaRepository(context);
-            var log = new LogInativacao("123456789", "admin") { Descricao = "Conta inativada" };
 
-            await repo.RegistrarLogsInativacaoAsync(log);
+            conta.Nome = "Carlos Silva";
+            await repo.AtualizarAsync(conta);
 
-            var dbLog = await context.LogsInativacao.FirstOrDefaultAsync(l => l.Documento == "123456789");
-            Assert.NotNull(dbLog);
-            Assert.Equal("admin", dbLog?.UsuarioDesativacao);
-            Assert.Equal("Conta inativada", dbLog?.Descricao);
+            var dbConta = await context.Contas.FirstOrDefaultAsync(c => c.Id == 99);
+            Assert.Equal("Carlos Silva", dbConta?.Nome);
         }
+
+
+        #endregion
     }
 }

@@ -9,5 +9,6 @@ namespace BankTeller.Application.Interfaces
         Task CriarAsync(Conta conta);
         Task AtualizarAsync(Conta conta);
         Task RegistrarLogsInativacaoAsync(LogInativacao log);
+        Task RegistrarTransacoesAsync(Transacao transacao);
     }
 }

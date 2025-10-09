@@ -94,7 +94,7 @@ namespace BankTeller.Application.Services
             return retorno;
         }
 
-        public async Task<Resultado<string>> Transferir(TransferenciaDto model)
+        public async Task<Resultado<string>> Transferir(TransacaoDto model)
         {
             var retorno = new Resultado<string>();
 
@@ -123,6 +123,15 @@ namespace BankTeller.Application.Services
 
             await _repository.AtualizarAsync(contaDestino);
             await _repository.AtualizarAsync(contaOrigem);
+
+            var transacao = new Transacao()
+            {
+                IdContaOrigem = contaOrigem.Id,
+                IdContaDestino = contaDestino.Id,
+                Valor = model.Valor,
+            };
+
+            await _repository.RegistrarTransacoesAsync(transacao);
 
             retorno.Sucesso = true;
             retorno.Mensagem = "Transferência realizada com sucesso.";

@@ -20,6 +20,8 @@ namespace BankTeller.Tests.Api.Tests
             _service = new BankService(_repositoryMock.Object, _loggerMock.Object);
         }
 
+        #region Cadastros
+
         [Fact]
         public async Task CadastrarConta_RetornarErro_QuandoContaJaExiste()
         {
@@ -46,6 +48,11 @@ namespace BankTeller.Tests.Api.Tests
             Assert.NotNull(result.Value);
             _repositoryMock.Verify(r => r.CriarAsync(It.IsAny<Conta>()), Times.Once);
         }
+
+
+        #endregion
+
+        #region Consultas
 
         [Fact]
         public async Task ConsultarContasPorDocumento_RetornarErro_QuandoNaoEncontraConta()
@@ -97,6 +104,11 @@ namespace BankTeller.Tests.Api.Tests
             Assert.Equal(contas, result.Value);
         }
 
+
+        #endregion
+
+        #region Desativação
+
         [Fact]
         public async Task InativarConta_RetornarErro_QuandoNaoEncontrarConta()
         {
@@ -141,10 +153,15 @@ namespace BankTeller.Tests.Api.Tests
             _repositoryMock.Verify(r => r.RegistrarLogsInativacaoAsync(It.IsAny<LogInativacao>()), Times.Once);
         }
 
+
+        #endregion
+
+        #region Transações
+
         [Fact]
         public async Task Transferir_RetornarErro_QuandoContaOrigemOuDestinoNaoEncontrados()
         {
-            var request = new TransferenciaDto { DocumentoOrigem = "1", DocumentoDestino = "2", Valor = 100 };
+            var request = new TransacaoDto { DocumentoOrigem = "1", DocumentoDestino = "2", Valor = 100 };
             _repositoryMock.Setup(r => r.ObterPorDocumentoAsync(request.DocumentoOrigem))
                 .ReturnsAsync((Conta)null);
             _repositoryMock.Setup(r => r.ObterPorDocumentoAsync(request.DocumentoDestino))
@@ -161,7 +178,7 @@ namespace BankTeller.Tests.Api.Tests
         {
             var contaOrigem = new Conta("Origem", "1") { Ativa = false };
             var contaDestino = new Conta("Destino", "2") { Ativa = true };
-            var request = new TransferenciaDto { DocumentoOrigem = "1", DocumentoDestino = "2", Valor = 100 };
+            var request = new TransacaoDto { DocumentoOrigem = "1", DocumentoDestino = "2", Valor = 100 };
             _repositoryMock.Setup(r => r.ObterPorDocumentoAsync(request.DocumentoOrigem))
                 .ReturnsAsync(contaOrigem);
             _repositoryMock.Setup(r => r.ObterPorDocumentoAsync(request.DocumentoDestino))
@@ -178,7 +195,7 @@ namespace BankTeller.Tests.Api.Tests
         {
             var contaOrigem = new Conta("Origem", "1") { Ativa = true, SaldoAtual = 50 };
             var contaDestino = new Conta("Destino", "2") { Ativa = true };
-            var request = new TransferenciaDto { DocumentoOrigem = "1", DocumentoDestino = "2", Valor = 100 };
+            var request = new TransacaoDto { DocumentoOrigem = "1", DocumentoDestino = "2", Valor = 100 };
             _repositoryMock.Setup(r => r.ObterPorDocumentoAsync(request.DocumentoOrigem))
                 .ReturnsAsync(contaOrigem);
             _repositoryMock.Setup(r => r.ObterPorDocumentoAsync(request.DocumentoDestino))
@@ -198,7 +215,7 @@ namespace BankTeller.Tests.Api.Tests
             contaOrigem.Ativa = true;
             contaDestino.Ativa = true;
             contaOrigem.SaldoAtual = 1000;
-            var request = new TransferenciaDto { DocumentoOrigem = "1", DocumentoDestino = "2", Valor = 100 };
+            var request = new TransacaoDto { DocumentoOrigem = "1", DocumentoDestino = "2", Valor = 100 };
             _repositoryMock.Setup(r => r.ObterPorDocumentoAsync(request.DocumentoOrigem))
                 .ReturnsAsync(contaOrigem);
             _repositoryMock.Setup(r => r.ObterPorDocumentoAsync(request.DocumentoDestino))
@@ -212,5 +229,7 @@ namespace BankTeller.Tests.Api.Tests
             _repositoryMock.Verify(r => r.AtualizarAsync(contaOrigem), Times.Once);
             contaOrigem.Transferir(contaDestino, request.Valor);
         }
+
+        #endregion
     }
 }

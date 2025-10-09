@@ -11,6 +11,8 @@ namespace BankTeller.API.Controllers
     {
         private readonly IBankService _bankService = bankService;
 
+        #region Cadastros
+
         [HttpPost("Cadastrar")]
         [EndpointDescription("Cria uma nova conta bancária.")]
         public async Task<ActionResult<ContaResponseDto>> Cadastrar([FromBody] ContaDto model)
@@ -36,6 +38,10 @@ namespace BankTeller.API.Controllers
                 SaldoAtual = resultado.Value.SaldoAtual
             });
         }
+
+        #endregion
+
+        #region Consultas
 
         [HttpGet("ConsultarPorDocumento")]
         [EndpointDescription("Busca contas por número de documento do cliente.")]
@@ -75,6 +81,10 @@ namespace BankTeller.API.Controllers
             return Ok(resultado.Value);
         }
 
+        #endregion
+
+        #region Desativação
+
         [HttpPatch("Inativar")]
         [EndpointDescription("Permite a inativação de uma conta bancária com base no número do documento do titular.")]
         public async Task<ActionResult<ContaResponseDto>> Inativar([FromBody] InativaDto model)
@@ -94,9 +104,13 @@ namespace BankTeller.API.Controllers
             return Ok(new { Retorno = resultado.Mensagem });
         }
 
+        #endregion
+
+        #region Transações
+
         [HttpPatch("Transferir")]
         [EndpointDescription("Permite transferir valores entre contas bancárias.")]
-        public async Task<ActionResult<ContaResponseDto>> Transferir([FromBody] TransferenciaDto model)
+        public async Task<ActionResult<ContaResponseDto>> Transferir([FromBody] TransacaoDto model)
         {
             if (!ModelState.IsValid)
             {
@@ -112,5 +126,7 @@ namespace BankTeller.API.Controllers
 
             return Ok(new { Retorno = resultado.Mensagem });
         }
+
+        #endregion
     }
 }

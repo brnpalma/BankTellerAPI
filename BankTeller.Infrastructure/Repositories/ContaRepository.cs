@@ -38,5 +38,11 @@ namespace BankTeller.Infrastructure.Repositories
             await _context.LogsInativacao.AddAsync(log);
             await _context.SaveChangesAsync();
         }
+
+        public async Task RegistrarTransacoesAsync(Transacao transacao)
+        {
+            await _context.Transacoes.AddAsync(transacao);
+            await _context.SaveChangesAsync();
+        }
     }
 }

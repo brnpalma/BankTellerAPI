@@ -7,6 +7,7 @@ namespace BankTeller.Infrastructure.Context
     {
         public DbSet<Conta> Contas { get; set; }
         public DbSet<LogInativacao> LogsInativacao { get; set; }
+        public DbSet<Transacao> Transacoes { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -17,6 +17,8 @@ namespace BankTeller.Tests.Api.Tests
             _controller = new ContaController(_bankServiceMock.Object);
         }
 
+        #region Cadastros
+
         [Fact]
         public async Task Cadastrar_RetornarOk_QuandoSucesso()
         {
@@ -45,6 +47,10 @@ namespace BankTeller.Tests.Api.Tests
             var badRequest = Assert.IsType<BadRequestObjectResult>(result.Result);
             Assert.Contains("Erro", badRequest.Value.ToString());
         }
+
+        #endregion
+
+        #region Consultas
 
         [Fact]
         public async Task ConsultarPorDocumento_RetornarOk_QuandoSucesso()
@@ -100,6 +106,10 @@ namespace BankTeller.Tests.Api.Tests
             Assert.Contains("Erro", badRequest.Value.ToString());
         }
 
+        #endregion
+
+        #region Desativação
+
         [Fact]
         public async Task Inativar_RetornarOk_QuandoSucesso()
         {
@@ -126,10 +136,14 @@ namespace BankTeller.Tests.Api.Tests
             Assert.Contains("Erro", badRequest.Value.ToString());
         }
 
+        #endregion
+
+        #region Transações
+
         [Fact]
         public async Task Transferir_RetornarOk_QuandoSucesso()
         {
-            var request = new TransferenciaDto
+            var request = new TransacaoDto
             {
                 DocumentoOrigem = "12345678901",
                 DocumentoDestino = "10987654321",
@@ -147,7 +161,7 @@ namespace BankTeller.Tests.Api.Tests
         [Fact]
         public async Task Transferir_RetornarBadRequest_AoFalhar()
         {
-            var request = new TransferenciaDto
+            var request = new TransacaoDto
             {
                 DocumentoOrigem = "12345678901",
                 DocumentoDestino = "10987654321",
@@ -161,5 +175,7 @@ namespace BankTeller.Tests.Api.Tests
             var badRequest = Assert.IsType<BadRequestObjectResult>(result.Result);
             Assert.Contains("Erro", badRequest.Value.ToString());
         }
+        
+        #endregion
     }
 }
