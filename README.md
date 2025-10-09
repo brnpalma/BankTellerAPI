@@ -77,7 +77,7 @@ Permite transferir valores entre contas ativas.
 
 ## 🔐 Segurança
 
-A segurança do sistema é garantida pela **restrição física de acesso à máquina** onde a aplicação será executada.  
+A segurança do sistema é garantida pela **restrição física de acesso à máquina** onde a aplicação é executada.  
 Não há necessidade de autenticação ou autorização adicionais, pois o ambiente é controlado fisicamente.  
 Por isso, **não implemente mecanismos de login, tokens ou controle de acesso** — o sistema é seguro por design local.
 
