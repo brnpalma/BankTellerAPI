@@ -1,4 +1,4 @@
-namespace BankTellerAPI.Domain.Entities
+namespace BankTeller.Domain.Entities
 {
     public class Transferencia
     {
