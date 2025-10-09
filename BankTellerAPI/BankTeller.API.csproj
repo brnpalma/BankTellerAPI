@@ -18,10 +18,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Api\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\BankTeller.Application\BankTeller.Application.csproj" />
     <ProjectReference Include="..\BankTeller.Infrastructure\BankTeller.Infrastructure.csproj" />
   </ItemGroup>

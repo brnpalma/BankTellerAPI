@@ -1,4 +1,4 @@
-﻿using BankTellerAPI.Domain.Entities;
+﻿using BankTeller.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BankTeller.Infrastructure.Context
@@ -7,6 +7,7 @@ namespace BankTeller.Infrastructure.Context
     {
         public DbSet<Conta> Contas { get; set; }
         public DbSet<Transferencia> Transferencias { get; set; }
+        public DbSet<InativaLog> InativaLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

@@ -2,5 +2,6 @@
   <Project Path="BankTeller.Application/BankTeller.Application.csproj" Id="f25869c6-6c80-4542-9fd3-ce3e4b17c944" />
   <Project Path="BankTeller.Domain/BankTeller.Domain.csproj" Id="06e2627b-f799-4a03-a79c-9916d5a52255" />
   <Project Path="BankTeller.Infrastructure/BankTeller.Infrastructure.csproj" Id="71092af4-7946-4138-94ee-df7e26090300" />
+  <Project Path="BankTeller.Tests/BankTeller.Tests.csproj" Id="1e90c5d1-2674-445e-b3de-30eb39d1bb70" />
   <Project Path="BankTellerAPI/BankTeller.API.csproj" />
 </Solution>

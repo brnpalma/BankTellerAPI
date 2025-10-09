@@ -1,6 +1,6 @@
 ﻿using BankTeller.Infrastructure.Context;
 using BankTeller.Infrastructure.Repositories;
-using BankTellerAPI.Application.Interfaces;
+using BankTeller.Application.Interfaces;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace BankTeller.Infrastructure.DependencyInjection
