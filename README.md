@@ -48,13 +48,13 @@ Não é necessário rodar comandos manuais como `dotnet ef database update` — 
 Facilitando o processo de clonar o projeto e rodar a API sem esforço adicional.
 
 Sendo assim, ao baixar o projeto:</br>
-1 - Abra a Solution:
+### 1. Abra a Solution:
   </br><img width="257" height="459" alt="image" src="https://github.com/user-attachments/assets/0c576e6c-d321-4433-b78c-5fbf65d2e4e6" />
 
-2 - Selecione como padrão de execução, o projeto BankTeller.Api e execute o https
+### 2. Selecione como padrão de execução, o projeto BankTeller.Api e execute o https
   </br><img width="288" height="46" alt="image" src="https://github.com/user-attachments/assets/bc2517f2-488f-477d-ad4d-737fb611934f" />
   
-3 - Pronto, a aplicação automaticamente criará o banco de dados BankTellerDb e as tabelas Contas, InativaLogs e Transferências em sua instancia local do SQL Server
+### 3. Pronto, a aplicação automaticamente criará o banco de dados BankTellerDb e as tabelas Contas, InativaLogs e Transferências em sua instancia local do SQL Server
 
 ## 👨‍💻 Autor
 
