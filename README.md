@@ -85,5 +85,5 @@ Por isso, **não implemente mecanismos de login, tokens ou controle de acesso** 
 
 ## 👨‍💻 Autor
 
-Desenvolvido para fins de viabilidade técnica.  
+Desenvolvido para fins experimentais e de viabilidade técnica.  
 Sinta-se à vontade para explorar, rodar e avaliar a arquitetura, organização e boas práticas aplicadas.
