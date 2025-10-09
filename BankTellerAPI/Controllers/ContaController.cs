@@ -111,10 +111,6 @@ namespace BankTeller.API.Controllers
             }
 
             return Ok(new { Retorno = resultado.Mensagem });
-
-            // TODO: Registrar o historico de transferencias
-            // TODO: Conferir documentação
-            // TODO: Revisar tudo
         }
     }
 }
