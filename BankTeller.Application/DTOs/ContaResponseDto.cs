@@ -1,8 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace BankTeller.Domain.Entities
+﻿namespace BankTeller.Domain.Entities
 {
-    public class ContaResponse
+    public class ContaResponseDto
     {
         public string Retorno { get; set; }
         public string Nome { get; set; }

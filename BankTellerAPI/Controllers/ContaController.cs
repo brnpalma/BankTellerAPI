@@ -13,7 +13,7 @@ namespace BankTeller.API.Controllers
 
         [HttpPost("Cadastrar")]
         [EndpointDescription("Cria uma nova conta bancária.")]
-        public async Task<ActionResult<ContaResponse>> Cadastrar([FromBody] ContaRequest model)
+        public async Task<ActionResult<ContaResponseDto>> Cadastrar([FromBody] ContaDto model)
         {
             if (!ModelState.IsValid)
             {
@@ -27,7 +27,7 @@ namespace BankTeller.API.Controllers
                 return BadRequest(new { Retorno = resultado.Erro });
             }
 
-            return Ok(new ContaResponse
+            return Ok(new ContaResponseDto
             {
                 Retorno = Constantes.ApiCongrats,
                 Nome = resultado.Value.Nome,
@@ -77,7 +77,7 @@ namespace BankTeller.API.Controllers
 
         [HttpPatch("Inativar")]
         [EndpointDescription("Permite a inativação de uma conta bancária com base no número do documento do titular.")]
-        public async Task<ActionResult<ContaResponse>> Inativar([FromBody] InativaRequest model)
+        public async Task<ActionResult<ContaResponseDto>> Inativar([FromBody] InativaDto model)
         {
             if (!ModelState.IsValid)
             {
@@ -96,7 +96,7 @@ namespace BankTeller.API.Controllers
 
         [HttpPatch("Transferir")]
         [EndpointDescription("Permite transferir valores entre contas bancárias.")]
-        public async Task<ActionResult<ContaResponse>> Transferir([FromBody] TransferenciaRequest model)
+        public async Task<ActionResult<ContaResponseDto>> Transferir([FromBody] TransferenciaDto model)
         {
             if (!ModelState.IsValid)
             {
@@ -113,7 +113,6 @@ namespace BankTeller.API.Controllers
             return Ok(new { Retorno = resultado.Mensagem });
 
             // TODO: Registrar o historico de transferencias
-            // TODO: FAzer os testes de unidade
             // TODO: Conferir documentação
             // TODO: Revisar tudo
         }

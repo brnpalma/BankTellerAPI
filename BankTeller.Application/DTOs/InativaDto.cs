@@ -2,7 +2,7 @@
 
 namespace BankTeller.Domain.Entities
 {
-    public class InativaRequest : DocumentoRequest
+    public class InativaDto : DocumentoDto
     {
         [Required(ErrorMessage = "Seu nome de usuário é obrigatório.")]
         public string NomeUsuario { get; set; }
