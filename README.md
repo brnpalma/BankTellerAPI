@@ -47,7 +47,7 @@ Ao executar a aplicação (`dotnet run`), o banco de dados e suas tabelas são *
 Não é necessário rodar comandos manuais como `dotnet ef database update` — as migrações são aplicadas na inicialização.  
 Facilitando o processo de clonar o projeto e rodar a API sem esforço adicional.
 
-Sendo assim, ao baixar o projeto:
+Sendo assim, ao baixar o projeto:</br>
 1 - Abra a Solution:
   </br><img width="257" height="459" alt="image" src="https://github.com/user-attachments/assets/0c576e6c-d321-4433-b78c-5fbf65d2e4e6" />
 
