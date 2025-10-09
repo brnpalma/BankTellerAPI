@@ -10,6 +10,10 @@ Aplicação API experimental voltada ao gerenciamento de contas bancárias e à 
 
 **Este projeto foi desenvolvido com _`.NET 10`_ e requer o uso do _`Visual Studio 2026 Insiders Preview`_ para funcionar corretamente.**
 
+
+
+> 🚨 **Importante:** Este projeto usa **.NET 10** e requer o **Visual Studio 2026 Insiders Preview** para funcionar corretamente.
+
 > ⚠️ Este projeto foi desenvolvido com **.NET 10** e requer o uso do **Visual Studio 2026 Insiders Preview** para funcionar corretamente.
 
 ### 🔧 Como configurar o ambiente:
