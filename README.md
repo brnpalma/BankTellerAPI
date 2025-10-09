@@ -31,8 +31,9 @@ Sendo assim, ao baixar o projeto:
 ### 2. Selecione como padrão de execução o projeto `BankTeller.Api` e execute via HTTPS:
 <img width="288" height="46" alt="image" src="https://github.com/user-attachments/assets/bc2517f2-488f-477d-ad4d-737fb611934f" />
 
-### 3. Pronto! A aplicação criará automaticamente o banco de dados `BankTellerDb` e as tabelas `Contas`, `InativaLogs` e `Transferências` na sua instância local do SQL Server:
-<img width="399" height="417" alt="image" src="https://github.com/user-attachments/assets/1a1ba9f0-3762-4c9f-828b-a824c4ab9f4d" />
+### 3. Pronto! A aplicação criará automaticamente o banco de dados `BankTellerDb` e as tabelas `Contas`, `LogsInativacao` e `Transacoes` na sua instância local do SQL Server:
+<img width="276" height="277" alt="image" src="https://github.com/user-attachments/assets/b306c6b9-485c-4468-9435-57d2b83c11eb" />
+
 
 ---
 
