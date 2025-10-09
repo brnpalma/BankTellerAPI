@@ -45,13 +45,15 @@ https://localhost:7090/docs
 
 ### 1. Cadastro de Contas Bancárias
 Permite o registro de novas contas para clientes.  
+
 **Regras:**
 - Nome e documento são obrigatórios;  
 - Não é permitido mais de uma conta por documento;  
-- Cada conta inicia com **saldo de R$1000** como bonificação;  
+- Cada conta inicia com **saldo de R$1.000,00** como bonificação;  
 
 ### 2. Consulta de Contas
 Permite listar contas cadastradas com opção de filtro por **nome** (parcial ou completo) ou **documento**.  
+
 **Retorno:**
 - Nome do cliente  
 - Documento  
@@ -61,12 +63,14 @@ Permite listar contas cadastradas com opção de filtro por **nome** (parcial ou
 
 ### 3. Inativação de Conta
 Permite inativar contas com base no documento do titular.  
+
 **Regras:**
 - O documento é obrigatório;  
 - Só é possível inativar contas **ativas**;  
 
 ### 4. Transferência entre Contas
 Permite transferir valores entre contas ativas.  
+
 **Regras:**
 - Ambas as contas devem estar **ativas**;  
 - A conta de origem deve ter **saldo suficiente**;  
