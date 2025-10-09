@@ -9,7 +9,7 @@ namespace BankTeller.Application.Services
         private readonly IContaRepository _repository = repository;
         private readonly ILogger<BankService> _logger = iLogger;
 
-        public async Task<Resultado<Conta>> CadastrarConta(ContaRequest model)
+        public async Task<Resultado<Conta>> CadastrarConta(ContaDto model)
         {
             var retorno = new Resultado<Conta>();
 
@@ -63,7 +63,7 @@ namespace BankTeller.Application.Services
             return retorno;
         }
 
-        public async Task<Resultado<string>> InativarConta(InativaRequest model)
+        public async Task<Resultado<string>> InativarConta(InativaDto model)
         {
             var retorno = new Resultado<string>();
 
@@ -94,7 +94,7 @@ namespace BankTeller.Application.Services
             return retorno;
         }
 
-        public async Task<Resultado<string>> Transferir(TransferenciaRequest model)
+        public async Task<Resultado<string>> Transferir(TransferenciaDto model)
         {
             var retorno = new Resultado<string>();
 

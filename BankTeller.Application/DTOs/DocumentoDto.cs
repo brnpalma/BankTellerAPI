@@ -2,7 +2,7 @@
 
 namespace BankTeller.Domain.Entities
 {
-    public class DocumentoRequest
+    public class DocumentoDto
     {
         [Required(ErrorMessage = "O documento do cliente é obrigatório.")]
         [RegularExpression(@"^(\d{11}|\d{14})$", ErrorMessage = "O documento deve conter 11 ou 14 dígitos numéricos.")]
