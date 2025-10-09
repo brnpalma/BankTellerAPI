@@ -11,7 +11,7 @@ Aplicação API experimental voltada ao gerenciamento de contas bancárias e à 
 ### 🔧 Como configurar o ambiente:
 
 1. Instale o SDK do [.NET 10 Preview](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
-2. Baixe o [Visual Studio 2026 Insiders](https://visualstudio.microsoft.com/vs/preview/) e certifique-se de habilitar o uso de SDKs em preview:
+2. Baixe e instale o [Visual Studio 2026 Insiders](https://visualstudio.microsoft.com/vs/preview/). O uso de SDKs em preview é habilitado por padrão, porém, caso queira conferir:
    - Acesse **Tools → Options → Environment → Preview Features**
    - Marque **“Use previews of the .NET SDK”**
    - Reinicie o Visual Studio
