@@ -1,6 +1,6 @@
 ﻿namespace BankTeller.Domain.Entities
 {
-    public class InativaLog(string documento, string usuarioDesativacao)
+    public class LogInativacao(string documento, string usuarioDesativacao)
     {
         public int Id { get; set; }
         public string? Documento { get; set; } = documento;

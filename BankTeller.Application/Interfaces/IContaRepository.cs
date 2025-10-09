@@ -8,6 +8,6 @@ namespace BankTeller.Application.Interfaces
         Task<IEnumerable<Conta?>> ObterPorNomeAsync(string nome);
         Task CriarAsync(Conta conta);
         Task AtualizarAsync(Conta conta);
-        Task RegistrarInativaLogsAsync(InativaLog log);
+        Task RegistrarLogsInativacaoAsync(LogInativacao log);
     }
 }

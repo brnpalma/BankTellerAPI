@@ -4,9 +4,9 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
 namespace BankTeller.Infrastructure.Context.Mappings
 {
-    public class InativaLogMap : IEntityTypeConfiguration<InativaLog>
+    public class LogInativacaoMap : IEntityTypeConfiguration<LogInativacao>
     {
-        public void Configure(EntityTypeBuilder<InativaLog> builder)
+        public void Configure(EntityTypeBuilder<LogInativacao> builder)
         {
             builder.HasKey(c => c.Id);
             builder.Property(c => c.Documento).IsRequired().HasMaxLength(14);

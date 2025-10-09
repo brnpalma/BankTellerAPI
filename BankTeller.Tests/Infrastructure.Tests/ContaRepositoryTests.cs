@@ -94,15 +94,15 @@ namespace BankTeller.Tests.Infrastructure.Tests
         }
 
         [Fact]
-        public async Task RegistrarInativaLogsAsync_AdicionaLogsNoBanco()
+        public async Task RegistrarLogsInativacaoAsync_AdicionaLogsNoBanco()
         {
             var context = GetInMemoryContext();
             var repo = new ContaRepository(context);
-            var log = new InativaLog("123456789", "admin") { Descricao = "Conta inativada" };
+            var log = new LogInativacao("123456789", "admin") { Descricao = "Conta inativada" };
 
-            await repo.RegistrarInativaLogsAsync(log);
+            await repo.RegistrarLogsInativacaoAsync(log);
 
-            var dbLog = await context.InativaLogs.FirstOrDefaultAsync(l => l.Documento == "123456789");
+            var dbLog = await context.LogsInativacao.FirstOrDefaultAsync(l => l.Documento == "123456789");
             Assert.NotNull(dbLog);
             Assert.Equal("admin", dbLog?.UsuarioDesativacao);
             Assert.Equal("Conta inativada", dbLog?.Descricao);

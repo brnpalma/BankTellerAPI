@@ -138,7 +138,7 @@ namespace BankTeller.Tests.Api.Tests
             Assert.True(result.Sucesso);
             Assert.Equal("A Conta foi alterada para inativa com sucesso.", result.Mensagem);
             _repositoryMock.Verify(r => r.AtualizarAsync(conta), Times.Once);
-            _repositoryMock.Verify(r => r.RegistrarInativaLogsAsync(It.IsAny<InativaLog>()), Times.Once);
+            _repositoryMock.Verify(r => r.RegistrarLogsInativacaoAsync(It.IsAny<LogInativacao>()), Times.Once);
         }
 
         [Fact]

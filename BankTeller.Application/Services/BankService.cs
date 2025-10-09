@@ -85,8 +85,8 @@ namespace BankTeller.Application.Services
 
             await _repository.AtualizarAsync(conta);
 
-            var log = new InativaLog(model.Documento, model.NomeUsuario);
-            await _repository.RegistrarInativaLogsAsync(log);
+            var log = new LogInativacao(model.Documento, model.NomeUsuario);
+            await _repository.RegistrarLogsInativacaoAsync(log);
             _logger.LogWarning("Conta do documento {Documento} inativada por usuário: {Usuario}", model.Documento, model.NomeUsuario);
 
             retorno.Sucesso = true;
