@@ -14,7 +14,7 @@ Aplicação API experimental voltada ao gerenciamento de contas bancárias e à 
 3. O uso de SDKs em preview é habilitado por padrão, mas você pode verificar manualmente com os passos abaixo:
    - Acesse **Tools → Options → Environment → Preview Features**
    - Marque **“Use previews of the .NET SDK”**
-   - Reinicie o Visual Studio
+   - Caso tenha sido necessário habilitar as flags citadas acima, reinicie o Visual Studio
 
 ---
 
