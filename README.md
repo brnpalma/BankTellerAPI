@@ -2,8 +2,45 @@
 
 Aplicação API experimental voltada ao gerenciamento de contas bancárias e à realização de transferências entre contas de forma simples e funcional.
 
+---
+
+## 🚀 Requisitos de Execução
+
+> ⚠️ Este projeto foi desenvolvido com **.NET 10** e requer o uso do **Visual Studio 2026 Insiders Preview** para funcionar corretamente.
+
+### 🔧 Como configurar o ambiente:
+
+1. Instale o SDK do [.NET 10 Preview](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
+2. Baixe o [Visual Studio 2026 Insiders](https://visualstudio.microsoft.com/vs/preview/) e certifique-se de habilitar o uso de SDKs em preview:
+   - Acesse **Tools → Options → Environment → Preview Features**
+   - Marque **“Use previews of the .NET SDK”**
+   - Reinicie o Visual Studio
+
+---
+
+## 🛠️ Setup automático
+
+Ao executar a aplicação (`dotnet run`), o banco de dados e suas tabelas são **criados automaticamente** via Entity Framework Core.  
+Não é necessário rodar comandos manuais como `dotnet ef database update` — as migrações são aplicadas na inicialização.  
+Facilitando o processo de clonar o projeto e rodar a API sem esforço adicional.
+
+Sendo assim, ao baixar o projeto:
+
+### 1. Abra a Solution:
+<img width="257" height="459" alt="image" src="https://github.com/user-attachments/assets/0c576e6c-d321-4433-b78c-5fbf65d2e4e6" />
+
+### 2. Selecione como padrão de execução o projeto `BankTeller.Api` e execute via HTTPS:
+<img width="288" height="46" alt="image" src="https://github.com/user-attachments/assets/bc2517f2-488f-477d-ad4d-737fb611934f" />
+
+### 3. Pronto! A aplicação criará automaticamente o banco de dados `BankTellerDb` e as tabelas `Contas`, `InativaLogs` e `Transferências` na sua instância local do SQL Server:
+<img width="399" height="417" alt="image" src="https://github.com/user-attachments/assets/1a1ba9f0-3762-4c9f-828b-a824c4ab9f4d" />
+
+---
+
 ## 📎 A documentação da API pode ser acessada localmente em:
 https://localhost:7090/docs
+
+---
 
 ## 🧩 Funcionalidades
 
@@ -35,27 +72,15 @@ Permite transferir valores entre contas ativas.
 - Ambas as contas devem estar **ativas**;  
 - A conta de origem deve ter **saldo suficiente**;  
 
+---
+
 ## 🔐 Segurança
 
 A segurança do sistema é garantida pela **restrição física de acesso à máquina** onde a aplicação será executada.  
 Não há necessidade de autenticação ou autorização adicionais, pois o ambiente é controlado fisicamente.  
 Por isso, **não implemente mecanismos de login, tokens ou controle de acesso** — o sistema é seguro por design local.
 
-## 🛠️ Setup automático
-
-Ao executar a aplicação (`dotnet run`), o banco de dados e suas tabelas são **criados automaticamente** via Entity Framework Core.  
-Não é necessário rodar comandos manuais como `dotnet ef database update` — as migrações são aplicadas na inicialização.  
-Facilitando o processo de clonar o projeto e rodar a API sem esforço adicional.
-
-Sendo assim, ao baixar o projeto:</br>
-### 1. Abra a Solution:
-<img width="257" height="459" alt="image" src="https://github.com/user-attachments/assets/0c576e6c-d321-4433-b78c-5fbf65d2e4e6" />
-
-### 2. Selecione como padrão de execução, o projeto BankTeller.Api e execute o https
-<img width="288" height="46" alt="image" src="https://github.com/user-attachments/assets/bc2517f2-488f-477d-ad4d-737fb611934f" />
-  
-### 3. Pronto, a aplicação automaticamente criará o banco de dados BankTellerDb e as tabelas Contas, InativaLogs e Transferências em sua instancia local do SQL Server
-<img width="399" height="417" alt="image" src="https://github.com/user-attachments/assets/1a1ba9f0-3762-4c9f-828b-a824c4ab9f4d" />
+---
 
 ## 👨‍💻 Autor
 
