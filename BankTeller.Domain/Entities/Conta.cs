@@ -18,10 +18,11 @@ namespace BankTeller.Domain.Entities
         public DateTime? DataDesativacao { get; set; }
         public string? UsuarioDesativacao { get; set; }
 
-        public void Inativar()
+        public void Inativar(string usuario)
         {
             Ativa = false;
             DataDesativacao = DateTime.Now;
+            UsuarioDesativacao = usuario;
         }
 
         public void Transferir(Conta contaDestino, decimal valor)

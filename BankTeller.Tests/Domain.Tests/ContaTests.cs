@@ -11,7 +11,7 @@ namespace BankTeller.Tests.Domain.Tests
             var conta = new Conta("Cliente", "123456789");
 
             // Act
-            conta.Inativar();
+            conta.Inativar("UsuarioMaster");
 
             // Assert
             Assert.False(conta.Ativa);

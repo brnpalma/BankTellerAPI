@@ -81,7 +81,7 @@ namespace BankTeller.Application.Services
                 return retorno;
             }
 
-            conta.Inativar();
+            conta.Inativar(model.NomeUsuario);
 
             await _repository.AtualizarAsync(conta);
 
