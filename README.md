@@ -1,4 +1,4 @@
-# 💰 BankTellerAPI
+# 💰 BankTellerAPI - Versão .NET 10
 
 Aplicação API experimental voltada ao gerenciamento de contas bancárias e à realização de transferências entre contas de forma simples e funcional.
 
@@ -6,6 +6,7 @@ Aplicação API experimental voltada ao gerenciamento de contas bancárias e à 
 
 ## 🚨 Atenção! 
 **Este projeto foi desenvolvido com _`.NET 10`_ e requer o uso do _`Visual Studio 2026 Insiders Preview`_ para funcionar corretamente.**
+[BankTellerAPI.v2 - Versão .NET 9.0](https://github.com/brnpalma/BankTeller.v2).
 
 ### 🔧 Como configurar o ambiente:
 
