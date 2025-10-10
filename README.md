@@ -5,7 +5,7 @@ Aplicação API experimental voltada ao gerenciamento de contas bancárias e à 
 ---
 
 ## 🚨 Atenção! 
-**Este projeto foi desenvolvido com _`.NET 10`_ e requer o uso do _`Visual Studio 2026 Insiders Preview`_ para funcionar corretamente.**
+**Este projeto foi desenvolvido com _`.NET 10`_ e requer o uso do _`Visual Studio 2026 Insiders Preview`_ para execução mais moderna.**
 
 **Caso a instalação do Visual Studio 2026 não seja viável, disponibilizei uma versão alternativa do projeto em _`.NET 9.0`_ compatível com _`Visual Studio 2022`_ em:.**
 [BankTellerAPI.v2 - Versão .NET 9.0](https://github.com/brnpalma/BankTeller.v2).
