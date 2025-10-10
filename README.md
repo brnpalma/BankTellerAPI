@@ -6,6 +6,7 @@ Aplicação API experimental voltada ao gerenciamento de contas bancárias e à 
 
 ## 🚨 Atenção! 
 **Este projeto foi desenvolvido com _`.NET 10`_ e requer o uso do _`Visual Studio 2026 Insiders Preview`_ para funcionar corretamente.**
+**Caso a instalação do Visual Studio 2026 não seja viável, disponibilizei uma versão alternativa do projeto em _`.NET 9.0`_, compatível com o _`Visual Studio 2022`_ em: **
 [BankTellerAPI.v2 - Versão .NET 9.0](https://github.com/brnpalma/BankTeller.v2).
 
 ### 🔧 Como configurar o ambiente:
@@ -16,12 +17,6 @@ Aplicação API experimental voltada ao gerenciamento de contas bancárias e à 
    - Acesse **Tools → Options → Environment → Preview Features**
    - Marque **“Use previews of the .NET SDK”**
    - Caso tenha sido necessário habilitar a opção citada acima, reinicie o Visual Studio
-  
-### 🔧 Opção alternativa para execução:
-
-1. Instale o SDK do [.NET 10 Preview](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
-2. Abra um terminal na pasta \BankTellerAPI\BankTellerAPI.
-3. Execute `dotnet run` e acesse a aplicação em http://localhost:5043/docs/
 
 ---
 
@@ -40,6 +35,11 @@ Sendo assim, ao baixar o projeto:
 3. Pronto! A aplicação criará automaticamente o banco de dados `BankTellerDb` e as tabelas `Contas`, `LogsInativacao` e `Transacoes` em sua instância local do SQL Server:
 <img width="276" height="277" alt="image" src="https://github.com/user-attachments/assets/b306c6b9-485c-4468-9435-57d2b83c11eb" />
 
+### 🔧 Opção alternativa para execução:
+
+1. Instale o SDK do [.NET 10 Preview](https://dotnet.microsoft.com/en-us/download/dotnet/10.0).
+2. Abra um terminal na pasta \BankTellerAPI\BankTellerAPI.
+3. Execute `dotnet run` e acesse a aplicação em http://localhost:5043/docs/
 
 ---
 
